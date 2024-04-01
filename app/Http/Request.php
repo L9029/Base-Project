@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+//La clase Request ejecuta un controlador y un método del mismo en base a la solicitud del usuario.
 class Request{
     protected $segments = [];
     protected $controller;
