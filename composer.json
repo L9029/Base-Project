@@ -1,0 +1,21 @@
+{
+    "name": "l9029/base-project",
+    "description": "Base Project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "L9029",
+            "email": "angeloca03@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\":"app/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    }
+}
