@@ -28,4 +28,27 @@ class Request{
         ? "index" //Llenar por defecto con home
         : $this->segments[2]; //Si hay informacón dejar el mismo elemento
     }
+
+    public function getController(){
+        $controller = ucfirst($this->controller); //Respeta el estandar y convierte la primera letra del segmento en mayuscula
+
+        return "App\Http\Controllers\\{$controller}Controller";
+    }
+
+    public function getMethod(){
+        return $this->method;
+    }
+
+    //Procesa todas las peticiones de los usuarios
+    public function send(){
+        $controller = $this->getController();
+        $method = $this->getMethod();
+
+        $response = call_user_func([
+            new $controller,
+            $method
+        ]);
+
+        $response->send();
+    }
 }
