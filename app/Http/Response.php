@@ -18,8 +18,8 @@ class Response{
         $view = $this->getView();
 
         //file_get_contents() sirve para almacenar un sitio web o un archivo en una variable tipo string
-        $content = file_get_contents(__DIR__ . "/../../views/$view.php");
+        $content = file_get_contents(viewPath($view));
 
-        require __DIR__ . "/../../views/layout.php";
+        require viewPath("layout");
     }
 }
